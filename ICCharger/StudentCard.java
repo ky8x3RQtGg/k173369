@@ -6,6 +6,8 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
+import app.GUI;
+
 public class StudentCard {
 
     private Integer idNum;
@@ -13,7 +15,8 @@ public class StudentCard {
     private Integer accountBalance;
     private BufferedImage face = null;
     private String text;
-    private ImageIcon icon;
+    private ImageIcon icon = new ImageIcon("img.png");
+    private GUI gui = new GUI();
 
     public Integer getIdNum() {
 	return idNum;
@@ -77,6 +80,9 @@ public class StudentCard {
 	}
 	public String gettext() {
 		return text;
+	}
+	public void registration() {
+		gui.registration_panel(this);
 	}
 
 }

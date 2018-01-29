@@ -24,7 +24,7 @@ public class GUI extends JFrame{
 
 	JFrame frame = new JFrame();
 
-	GUI(){
+	public GUI(){
 
 	}
 
