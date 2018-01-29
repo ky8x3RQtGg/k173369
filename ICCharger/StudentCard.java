@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 public class StudentCard {
 
@@ -12,6 +13,7 @@ public class StudentCard {
     private Integer accountBalance;
     private BufferedImage face = null;
     private String text;
+    private ImageIcon icon;
 
     public Integer getIdNum() {
 	return idNum;
@@ -60,4 +62,21 @@ public class StudentCard {
 	}
 	this.text = text;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    public ImageIcon getIcon() {
+		return icon;
+	}
+
+	public void setIcon(ImageIcon icon) {
+		this.icon = icon;
+	}
+
+	public void settext(String text) {
+		this.text = text;
+	}
+	public String gettext() {
+		return text;
+	}
+
 }
