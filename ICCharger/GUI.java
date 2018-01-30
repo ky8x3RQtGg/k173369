@@ -1,4 +1,5 @@
-/*gitのテスト*/
+package ICCharger;
+
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -17,18 +18,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import ICCharger.StudentCard;
+
 public class GUI extends JFrame{
 
 	JFrame frame = new JFrame();
 
-	GUI(){
+	public GUI(){
 
 	}
 
 	/*実際の登録画面用の関数*/
 	public void registration_panel(final StudentCard sc) {
 
-		setTitle(sc.getStudentName() + "の情報登録");
+		setTitle(sc.getName() + "の情報登録");
 		setBounds(100,100,500,500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -61,10 +64,14 @@ public class GUI extends JFrame{
 				if(choice == JFileChooser.APPROVE_OPTION) {
 
 					File file = fileChooser.getSelectedFile();
-					
+					System.out.println("ファイルバス:" + file.getPath());
+
 					ImageIcon icon = new ImageIcon(file.getPath());
 					iconLabel.setIcon(icon);
+
+
 					sc.setIcon(icon);
+
 				}
 
 			}
@@ -72,10 +79,10 @@ public class GUI extends JFrame{
 
 		button2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				sc.setFree_txt(text.getText());//テキスト情報をフィールドへセット
+				sc.settext(text.getText());//テキスト情報をフィールドへセット
 
-				System.out.println(sc.getStudentName()+"の自由テキスト");
-				System.out.println(sc.getFree_txt());
+				System.out.println(sc.getName()+"の自由テキスト");
+				System.out.println(sc.gettext());
 				System.out.println();
 
 				/*終了*/
